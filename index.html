@@ -26,6 +26,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&family=Noto+Sans+JP:wght@300;400;500&display=swap"
     rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
     :root {
       --red: #FF3B3B;
@@ -357,12 +358,7 @@
     }
 
     .feature-card::before {
-      content: attr(data-emoji);
-      position: absolute;
-      right: 16px;
-      top: 14px;
-      font-size: 2.8rem;
-      opacity: 0.12;
+      display: none;
     }
 
     .feature-card:hover {
@@ -798,7 +794,7 @@
         楽天証券
         <span class="logo-badge">無料開設</span>
       </a>
-      <a href="#open-account" class="nav-cta" aria-label="証券口座開設をはじめる">はじめる <span aria-hidden="true">🚀</span></a>
+      <a href="#open-account" class="nav-cta" aria-label="証券口座開設をはじめる">はじめる <i class="fa-solid fa-rocket" aria-hidden="true"></i></a>
     </nav>
   </header>
   <main>
@@ -806,51 +802,51 @@
     <div class="blob blob1"></div>
     <div class="blob blob2"></div>
     <div class="blob blob3"></div>
-    <span class="hero-emoji" aria-hidden="true">💰</span>
+    <span class="hero-emoji" aria-hidden="true"><i class="fa-solid fa-coins"></i></span>
     <h1 class="hero-h1">
       楽天証券で投資デビュー<br>
       お金に、<span class="underline">がんばって</span>もらおう
     </h1>
     <p class="hero-sub">
       楽天ポイントで始められて、手数料は0円。<br>
-      スマホひとつで、コツコツ資産づくり <span aria-hidden="true">🌱</span>
+      スマホひとつで、コツコツ資産づくり <i class="fa-solid fa-seedling" aria-hidden="true"></i>
     </p>
     <div class="hero-btns">
-      <a href="#open-account" class="btn-main">口座を開設する（無料）<span aria-hidden="true">✨</span></a>
+      <a href="#open-account" class="btn-main">口座を開設する（無料）<i class="fa-solid fa-sparkles" aria-hidden="true"></i></a>
       <a href="#features" class="btn-ghost">どんなサービス？</a>
     </div>
     <div class="stats-pills">
-      <div class="pill"><span aria-hidden="true">👥</span> 証券口座開設数 <span class="pill-num">1,000万突破</span></div>
-      <div class="pill"><span aria-hidden="true">💸</span> 国内株式の取引手数料 <span class="pill-num">0円</span></div>
-      <div class="pill"><span aria-hidden="true">📦</span> 取扱い投資信託 <span class="pill-num">2,600本以上</span></div>
+      <div class="pill"><i class="fa-solid fa-users" aria-hidden="true"></i> 証券口座開設数 <span class="pill-num">1,000万突破</span></div>
+      <div class="pill"><i class="fa-solid fa-yen-sign" aria-hidden="true"></i> 国内株式の取引手数料 <span class="pill-num">0円</span></div>
+      <div class="pill"><i class="fa-solid fa-box-open" aria-hidden="true"></i> 取扱い投資信託 <span class="pill-num">2,600本以上</span></div>
     </div>
   </section>
   <section class="features" id="features">
     <div class="section-head reveal">
-      <div class="section-tag"><span aria-hidden="true">✨</span> できること</div>
+      <div class="section-tag"><i class="fa-solid fa-star" aria-hidden="true"></i> できること</div>
       <h2 class="section-title">楽天証券の特徴・メリット</h2>
     </div>
     <div class="feature-list">
       <article class="feature-card reveal" data-emoji="💸">
-        <span class="feature-emoji" aria-hidden="true">💸</span>
+        <span class="feature-emoji" aria-hidden="true"><i class="fa-solid fa-yen-sign"></i></span>
         <h3 class="feature-title">国内株式の取引手数料が0円</h3>
         <p class="feature-text">「ゼロコース」なら国内株式の取引手数料が完全無料。売買コストを気にせずのびのび投資できます。</p>
         <span class="feature-badge">ゼロコース対応</span>
       </article>
       <article class="feature-card reveal" data-emoji="🛍️">
-        <span class="feature-emoji" aria-hidden="true">🛍️</span>
+        <span class="feature-emoji" aria-hidden="true"><i class="fa-solid fa-cart-shopping"></i></span>
         <h3 class="feature-title">楽天ポイントで投資できる</h3>
         <p class="feature-text">楽天市場や楽天カードで貯めたポイントをそのまま投資に使えます。お買い物感覚で資産づくり。</p>
         <span class="feature-badge">楽天ポイント対応</span>
       </article>
       <article class="feature-card reveal" data-emoji="🌱">
-        <span class="feature-emoji" aria-hidden="true">🌱</span>
+        <span class="feature-emoji" aria-hidden="true"><i class="fa-solid fa-seedling"></i></span>
         <h3 class="feature-title">新NISAにしっかり対応</h3>
         <p class="feature-text">新NISAの成長投資枠もつみたて投資枠もバッチリ。非課税でコツコツ増やしていきましょう。</p>
         <span class="feature-badge">新NISA対応</span>
       </article>
       <article class="feature-card reveal" data-emoji="📱">
-        <span class="feature-emoji" aria-hidden="true">📱</span>
+        <span class="feature-emoji" aria-hidden="true"><i class="fa-solid fa-mobile-screen-button"></i></span>
         <h3 class="feature-title">スマホアプリiSPEEDで完結</h3>
         <p class="feature-text">iSPEEDアプリで株価確認から注文まで完結。電車の中でもサクッとチェックできます。</p>
         <span class="feature-badge">アプリ対応</span>
@@ -860,24 +856,24 @@
   <section class="nisa-section" id="nisa">
     <div class="nisa-inner">
       <div class="section-head reveal">
-        <div class="section-tag"><span aria-hidden="true">🌱</span> 新NISA</div>
+        <div class="section-tag"><i class="fa-solid fa-seedling" aria-hidden="true"></i> 新NISA</div>
         <h2 class="section-title">楽天証券の新NISAが選ばれる理由</h2>
       </div>
       <div class="nisa-grid">
         <article class="nisa-card reveal">
-          <h3 class="nisa-card-title"><span aria-hidden="true">💰</span> 投資の利益が非課税</h3>
+          <h3 class="nisa-card-title"><i class="fa-solid fa-coins" aria-hidden="true"></i> 投資の利益が非課税</h3>
           <p class="nisa-card-text">通常約20%かかる税金が、NISA口座なら0円。利益がまるごと手元に残ります。100万円の利益なら約20万円の差に。</p>
         </article>
         <article class="nisa-card reveal">
-          <h3 class="nisa-card-title"><span aria-hidden="true">♾️</span> 非課税期間が無期限</h3>
+          <h3 class="nisa-card-title"><i class="fa-solid fa-infinity" aria-hidden="true"></i> 非課税期間が無期限</h3>
           <p class="nisa-card-text">新NISAでは非課税で保有できる期間が無期限に。長期でじっくり資産を育てたい方に最適です。</p>
         </article>
         <article class="nisa-card reveal">
-          <h3 class="nisa-card-title"><span aria-hidden="true">🎯</span> 楽天ポイントでNISA投資</h3>
+          <h3 class="nisa-card-title"><i class="fa-solid fa-bullseye" aria-hidden="true"></i> 楽天ポイントでNISA投資</h3>
           <p class="nisa-card-text">NISA口座でも楽天ポイントが使えます。ポイントで投資信託を買って、非課税で運用できます。</p>
         </article>
         <article class="nisa-card reveal">
-          <h3 class="nisa-card-title"><span aria-hidden="true">📊</span> 豊富な対象商品</h3>
+          <h3 class="nisa-card-title"><i class="fa-solid fa-chart-bar" aria-hidden="true"></i> 豊富な対象商品</h3>
           <p class="nisa-card-text">つみたて投資枠・成長投資枠ともに業界トップクラスの品揃え。自分に合った商品を選べます。</p>
         </article>
         <div class="nisa-highlight reveal">
@@ -904,22 +900,22 @@
   <section class="for-whom">
     <div class="for-whom-inner">
       <div class="section-head reveal">
-        <div class="section-tag"><span aria-hidden="true">🙋</span> こんな人におすすめ</div>
+        <div class="section-tag"><i class="fa-solid fa-hand" aria-hidden="true"></i> こんな人におすすめ</div>
         <h2 class="section-title">楽天証券はこんな方におすすめ</h2>
       </div>
       <div class="persona-list">
         <article class="persona-card reveal">
-          <span class="persona-emoji" aria-hidden="true">🔰</span>
+          <span class="persona-emoji" aria-hidden="true"><i class="fa-solid fa-graduation-cap"></i></span>
           <h3 class="persona-title">はじめての投資</h3>
           <p class="persona-text">100円から始められるから、とりあえずやってみる、が気軽にできます。</p>
         </article>
         <article class="persona-card reveal">
-          <span class="persona-emoji" aria-hidden="true">🛒</span>
+          <span class="persona-emoji" aria-hidden="true"><i class="fa-solid fa-cart-shopping"></i></span>
           <h3 class="persona-title">楽天ユーザー</h3>
           <p class="persona-text">楽天市場・楽天カードをよく使う方はSPU倍率もUP。ポイントがどんどん活きてきます。</p>
         </article>
         <article class="persona-card reveal">
-          <span class="persona-emoji" aria-hidden="true">🏷️</span>
+          <span class="persona-emoji" aria-hidden="true"><i class="fa-solid fa-tag"></i></span>
           <h3 class="persona-title">コスト重視な方</h3>
           <p class="persona-text">手数料を抑えたい方に最適。長期投資ほどコスト差が将来の資産額に大きく響きます。</p>
         </article>
@@ -929,7 +925,7 @@
   <section class="articles-section" id="articles">
     <div class="articles-inner">
       <div class="section-head reveal">
-        <div class="section-tag"><span aria-hidden="true">📖</span> お役立ち記事</div>
+        <div class="section-tag"><i class="fa-solid fa-book-open" aria-hidden="true"></i> お役立ち記事</div>
         <h2 class="section-title">投資をもっと知ろう</h2>
       </div>
       <div class="articles-list">
@@ -956,18 +952,18 @@
   </section>
   <section class="cta-section" id="open-account">
     <div class="cta-inner">
-      <span class="cta-emoji" aria-hidden="true">👋</span>
+      <span class="cta-emoji" aria-hidden="true"><i class="fa-solid fa-hand-peace"></i></span>
       <h2 class="cta-title reveal">さあ、はじめてみよう！<br>証券口座開設は無料です。</h2>
       <p class="cta-sub reveal">
         オンラインで申込みできて、<br>最短翌営業日から取引スタート！
       </p>
       <div class="cta-chips reveal">
-        <div class="chip"><span class="chip-check">✓</span> 口座維持費0円</div>
-        <div class="chip"><span class="chip-check">✓</span> 最短翌営業日取引可</div>
-        <div class="chip"><span class="chip-check">✓</span> スマホで完結</div>
+        <div class="chip"><span class="chip-check"><i class="fa-solid fa-check"></i></span> 口座維持費0円</div>
+        <div class="chip"><span class="chip-check"><i class="fa-solid fa-check"></i></span> 最短翌営業日取引可</div>
+        <div class="chip"><span class="chip-check"><i class="fa-solid fa-check"></i></span> スマホで完結</div>
       </div>
       <a href="https://www.rakuten-sec.co.jp/" target="_blank" rel="noopener" class="btn-cta reveal">
-        無料で証券口座開設する <span aria-hidden="true">🎉</span>
+        無料で証券口座開設する <i class="fa-solid fa-party-horn" aria-hidden="true"></i>
       </a>
       <p class="cta-note reveal">マイナンバーカードまたは本人確認書類が必要です</p>
     </div>
