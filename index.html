@@ -400,6 +400,125 @@
       border-radius: 100px;
     }
 
+    /* NISA */
+    .nisa-section {
+      padding: 90px 32px;
+      background: linear-gradient(135deg, #F0FFF4 0%, #FFFBEA 100%);
+    }
+
+    .nisa-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .nisa-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .nisa-card {
+      background: #fff;
+      border-radius: 22px;
+      padding: 28px 24px;
+      border: 2px solid var(--border);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .nisa-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.07);
+    }
+
+    .nisa-card-title {
+      font-size: 1rem;
+      font-weight: 900;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nisa-card-text {
+      font-size: 0.85rem;
+      line-height: 1.85;
+      color: var(--mid);
+    }
+
+    .nisa-highlight {
+      grid-column: 1 / -1;
+      background: var(--red-pale);
+      border-color: var(--red-soft);
+      text-align: center;
+      padding: 24px;
+    }
+
+    .nisa-highlight-text {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--red);
+    }
+
+    .nisa-comparison {
+      margin-top: 32px;
+      background: #fff;
+      border-radius: 22px;
+      padding: 28px 24px;
+      border: 2px solid var(--border);
+      text-align: center;
+    }
+
+    .nisa-comparison-title {
+      font-size: 1rem;
+      font-weight: 900;
+      margin-bottom: 16px;
+    }
+
+    .nisa-comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .nisa-waku {
+      padding: 16px;
+      border-radius: 16px;
+      background: var(--bg);
+    }
+
+    .nisa-waku-name {
+      font-size: 0.85rem;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .nisa-waku-limit {
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: var(--red);
+      margin-bottom: 4px;
+    }
+
+    .nisa-waku-detail {
+      font-size: 0.75rem;
+      color: var(--mid);
+    }
+
+    @media (max-width: 700px) {
+      .nisa-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nisa-highlight {
+        grid-column: auto;
+      }
+
+      .nisa-comparison-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     /* FOR WHOM */
     .for-whom {
       padding: 90px 32px;
@@ -677,6 +796,50 @@
         <p class="feature-text">iSPEEDアプリで株価確認から注文まで完結。電車の中でもサクッとチェックできます。</p>
         <span class="feature-badge">アプリ対応</span>
       </article>
+    </div>
+  </section>
+  <section class="nisa-section" id="nisa">
+    <div class="nisa-inner">
+      <div class="section-head reveal">
+        <div class="section-tag"><span aria-hidden="true">🌱</span> 新NISA</div>
+        <h2 class="section-title">楽天証券の新NISAが選ばれる理由</h2>
+      </div>
+      <div class="nisa-grid">
+        <article class="nisa-card reveal">
+          <h3 class="nisa-card-title"><span aria-hidden="true">💰</span> 投資の利益が非課税</h3>
+          <p class="nisa-card-text">通常約20%かかる税金が、NISA口座なら0円。利益がまるごと手元に残ります。100万円の利益なら約20万円の差に。</p>
+        </article>
+        <article class="nisa-card reveal">
+          <h3 class="nisa-card-title"><span aria-hidden="true">♾️</span> 非課税期間が無期限</h3>
+          <p class="nisa-card-text">新NISAでは非課税で保有できる期間が無期限に。長期でじっくり資産を育てたい方に最適です。</p>
+        </article>
+        <article class="nisa-card reveal">
+          <h3 class="nisa-card-title"><span aria-hidden="true">🎯</span> 楽天ポイントでNISA投資</h3>
+          <p class="nisa-card-text">NISA口座でも楽天ポイントが使えます。ポイントで投資信託を買って、非課税で運用できます。</p>
+        </article>
+        <article class="nisa-card reveal">
+          <h3 class="nisa-card-title"><span aria-hidden="true">📊</span> 豊富な対象商品</h3>
+          <p class="nisa-card-text">つみたて投資枠・成長投資枠ともに業界トップクラスの品揃え。自分に合った商品を選べます。</p>
+        </article>
+        <div class="nisa-highlight reveal">
+          <p class="nisa-highlight-text">楽天証券はNISA口座開設数 No.1（主要ネット証券）</p>
+        </div>
+      </div>
+      <div class="nisa-comparison reveal">
+        <h3 class="nisa-comparison-title">新NISAの年間投資枠</h3>
+        <div class="nisa-comparison-grid">
+          <div class="nisa-waku">
+            <div class="nisa-waku-name">つみたて投資枠</div>
+            <div class="nisa-waku-limit">年120万円</div>
+            <div class="nisa-waku-detail">コツコツ積立に最適<br>投資信託が対象</div>
+          </div>
+          <div class="nisa-waku">
+            <div class="nisa-waku-name">成長投資枠</div>
+            <div class="nisa-waku-limit">年240万円</div>
+            <div class="nisa-waku-detail">株式・ETFも対象<br>自由度の高い投資に</div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
   <section class="for-whom">
