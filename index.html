@@ -704,6 +704,81 @@
       color: rgba(255, 255, 255, 0.2);
     }
 
+    /* ARTICLES */
+    .articles-section {
+      padding: 90px 32px;
+      background: #fff;
+    }
+
+    .articles-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .articles-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .article-card {
+      background: var(--bg);
+      border-radius: 22px;
+      padding: 28px 24px;
+      border: 2px solid var(--border);
+      text-decoration: none;
+      color: var(--text);
+      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .article-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.07);
+      border-color: var(--red-soft);
+    }
+
+    .article-card-tag {
+      display: inline-block;
+      background: var(--yellow);
+      color: var(--text);
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 100px;
+      margin-bottom: 12px;
+      align-self: flex-start;
+    }
+
+    .article-card-title {
+      font-size: 1rem;
+      font-weight: 900;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .article-card-desc {
+      font-size: 0.8rem;
+      color: var(--mid);
+      line-height: 1.7;
+      flex-grow: 1;
+    }
+
+    .article-card-link {
+      font-size: 0.8rem;
+      color: var(--red);
+      font-weight: 700;
+      margin-top: 14px;
+    }
+
+    @media (max-width: 700px) {
+      .articles-list {
+        grid-template-columns: 1fr;
+      }
+    }
+
     /* REVEAL */
     .reveal {
       opacity: 0;
@@ -864,6 +939,34 @@
           <h3 class="persona-title">コスト重視な方</h3>
           <p class="persona-text">手数料を抑えたい方に最適。長期投資ほどコスト差が将来の資産額に大きく響きます。</p>
         </article>
+      </div>
+    </div>
+  </section>
+  <section class="articles-section" id="articles">
+    <div class="articles-inner">
+      <div class="section-head reveal">
+        <div class="section-tag"><span aria-hidden="true">📖</span> お役立ち記事</div>
+        <h2 class="section-title">投資をもっと知ろう</h2>
+      </div>
+      <div class="articles-list">
+        <a href="/articles/how-to-open-account.html" class="article-card reveal">
+          <span class="article-card-tag">口座開設</span>
+          <div class="article-card-title">楽天証券の口座開設手順を分かりやすく解説</div>
+          <p class="article-card-desc">初めての方向けに、必要書類から申込みの流れまでステップごとに解説します。</p>
+          <span class="article-card-link">続きを読む →</span>
+        </a>
+        <a href="/articles/nisa-guide.html" class="article-card reveal">
+          <span class="article-card-tag">新NISA</span>
+          <div class="article-card-title">新NISAとは？楽天証券での始め方を初心者向けに解説</div>
+          <p class="article-card-desc">非課税制度の仕組み、つみたて投資枠と成長投資枠の違いを分かりやすくまとめました。</p>
+          <span class="article-card-link">続きを読む →</span>
+        </a>
+        <a href="/articles/point-investment.html" class="article-card reveal">
+          <span class="article-card-tag">ポイント投資</span>
+          <div class="article-card-title">楽天ポイント投資のメリット・デメリットを徹底解説</div>
+          <p class="article-card-desc">現金0円で投資デビュー。楽天ポイント投資の活用法とおすすめの始め方を紹介。</p>
+          <span class="article-card-link">続きを読む →</span>
+        </a>
       </div>
     </div>
   </section>

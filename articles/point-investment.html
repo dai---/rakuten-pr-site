@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>楽天ポイント投資のメリット・デメリットを徹底解説【初心者向け】</title>
+  <meta name="description" content="楽天ポイントで投資ができる「ポイント投資」のメリット・デメリット、始め方、おすすめの使い方を初心者向けに解説。現金を使わずに投資デビューする方法も紹介。">
+  <meta name="keywords" content="楽天ポイント投資, メリット, デメリット, やり方, 楽天証券, 初心者">
+  <meta property="og:title" content="楽天ポイント投資のメリット・デメリットを徹底解説">
+  <meta property="og:description" content="楽天ポイントで投資ができる「ポイント投資」のメリット・デメリット、始め方を解説。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://rakuten-pr-site.vercel.app/articles/point-investment.html">
+  <meta property="og:image" content="https://rakuten-pr-site.vercel.app/ogp.png">
+  <meta property="og:locale" content="ja_JP">
+  <link rel="canonical" href="https://rakuten-pr-site.vercel.app/articles/point-investment.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&family=Noto+Sans+JP:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --red: #FF3B3B;
+      --red-soft: #FF6B6B;
+      --red-pale: #FFF0F0;
+      --yellow: #FFD93D;
+      --green: #6BCB77;
+      --bg: #FFFBF5;
+      --card: #FFFFFF;
+      --text: #2D2D2D;
+      --mid: #666;
+      --light: #AAA;
+      --border: #F0E8E0;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans JP', 'Zen Maru Gothic', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.9;
+    }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 32px; height: 64px;
+      background: rgba(255, 251, 245, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 2px solid var(--border);
+    }
+
+    .nav-logo {
+      font-family: 'Zen Maru Gothic', sans-serif;
+      font-size: 1.15rem; font-weight: 900;
+      color: var(--text); text-decoration: none;
+      display: flex; align-items: center; gap: 8px;
+    }
+
+    .logo-badge {
+      background: var(--red); color: #fff;
+      font-size: 0.68rem; font-weight: 700;
+      padding: 2px 10px; border-radius: 100px;
+    }
+
+    .nav-cta {
+      background: var(--red); color: #fff;
+      text-decoration: none; font-size: 0.85rem; font-weight: 700;
+      padding: 10px 22px; border-radius: 100px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 3px 12px rgba(255, 59, 59, 0.35);
+    }
+
+    .nav-cta:hover { transform: translateY(-2px) scale(1.03); }
+
+    .article {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 100px 24px 60px;
+    }
+
+    .breadcrumb {
+      font-size: 0.8rem;
+      color: var(--mid);
+      margin-bottom: 24px;
+    }
+
+    .breadcrumb a { color: var(--mid); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--red); }
+
+    .article h1 {
+      font-family: 'Zen Maru Gothic', sans-serif;
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      font-weight: 900;
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+
+    .article-meta {
+      font-size: 0.8rem;
+      color: var(--light);
+      margin-bottom: 40px;
+    }
+
+    .article h2 {
+      font-family: 'Zen Maru Gothic', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 900;
+      margin: 48px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 3px solid var(--yellow);
+    }
+
+    .article h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin: 32px 0 12px;
+    }
+
+    .article p {
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+    }
+
+    .merit-box {
+      background: #F0FFF4;
+      border-left: 4px solid var(--green);
+      border-radius: 0 12px 12px 0;
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+
+    .merit-box-title {
+      font-weight: 900;
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+      color: var(--green);
+    }
+
+    .demerit-box {
+      background: #FFF5F5;
+      border-left: 4px solid var(--red-soft);
+      border-radius: 0 12px 12px 0;
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+
+    .demerit-box-title {
+      font-weight: 900;
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+      color: var(--red);
+    }
+
+    .merit-list, .demerit-list {
+      list-style: none;
+      margin: 0;
+    }
+
+    .merit-list li, .demerit-list li {
+      font-size: 0.9rem;
+      padding: 6px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      color: var(--mid);
+    }
+
+    .merit-list li::before {
+      content: '◎';
+      color: var(--green);
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+
+    .demerit-list li::before {
+      content: '△';
+      color: var(--red-soft);
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+
+    .check-list {
+      list-style: none;
+      margin: 16px 0 24px;
+    }
+
+    .check-list li {
+      font-size: 0.9rem;
+      padding: 6px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .check-list li::before {
+      content: '✓';
+      color: var(--green);
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+
+    .info-box {
+      background: var(--red-pale);
+      border-left: 4px solid var(--red);
+      border-radius: 0 12px 12px 0;
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+
+    .info-box-title {
+      font-weight: 900;
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+      color: var(--red);
+    }
+
+    .info-box p {
+      font-size: 0.85rem;
+      color: var(--mid);
+      margin-bottom: 0;
+    }
+
+    .example-box {
+      background: #fff;
+      border: 2px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      margin: 24px 0;
+    }
+
+    .example-title {
+      font-weight: 900;
+      font-size: 1rem;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+
+    .example-text {
+      font-size: 0.9rem;
+      color: var(--mid);
+      line-height: 1.85;
+    }
+
+    .highlight-num {
+      color: var(--red);
+      font-weight: 900;
+    }
+
+    .cta-banner {
+      background: linear-gradient(135deg, #FFF5F5, #FFFBEA);
+      border: 2px solid var(--border);
+      border-radius: 22px;
+      padding: 40px 32px;
+      text-align: center;
+      margin: 48px 0;
+    }
+
+    .cta-banner h3 {
+      font-family: 'Zen Maru Gothic', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 900;
+      margin: 0 0 12px;
+    }
+
+    .cta-banner p {
+      color: var(--mid);
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+
+    .btn-cta {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--red); color: #fff;
+      text-decoration: none; font-size: 1rem; font-weight: 900;
+      padding: 16px 40px; border-radius: 100px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 18px rgba(255, 59, 59, 0.4);
+    }
+
+    .btn-cta:hover { transform: translateY(-3px) scale(1.03); }
+
+    footer {
+      background: var(--text);
+      padding: 32px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-size: 0.9rem; font-weight: 900; color: #fff; margin-bottom: 8px;
+    }
+
+    .footer-logo span { color: var(--red-soft); }
+
+    .footer-copy {
+      font-size: 0.68rem;
+      color: rgba(255, 255, 255, 0.2);
+    }
+
+    @media (max-width: 700px) {
+      nav { padding: 0 16px; }
+      .article { padding: 90px 16px 40px; }
+    }
+  </style>
+</head>
+
+<body>
+  <nav aria-label="メインナビゲーション">
+    <a href="/" class="nav-logo">
+      楽天証券
+      <span class="logo-badge">無料開設</span>
+    </a>
+    <a href="/#open-account" class="nav-cta" aria-label="証券口座開設をはじめる">はじめる <span aria-hidden="true">🚀</span></a>
+  </nav>
+
+  <main>
+    <article class="article">
+      <div class="breadcrumb">
+        <a href="/">ホーム</a> &gt; 楽天ポイント投資のメリット・デメリット
+      </div>
+
+      <h1>楽天ポイント投資のメリット・デメリットを徹底解説</h1>
+      <div class="article-meta">更新日：2026年3月</div>
+
+      <p>楽天証券では、楽天市場や楽天カードで貯めた楽天ポイントを使って投資ができます。「ポイント投資」とも呼ばれるこの仕組みは、現金を使わずに投資を始められるため、初心者に人気のサービスです。この記事では、楽天ポイント投資のメリット・デメリットと、おすすめの活用法を解説します。</p>
+
+      <h2>楽天ポイント投資とは？</h2>
+
+      <p>楽天ポイント投資は、楽天証券で投資信託や国内株式を購入する際に、楽天ポイント（通常ポイント）を代金の一部または全額に充てられるサービスです。</p>
+
+      <ul class="check-list">
+        <li>1ポイント = 1円として利用可能</li>
+        <li>投資信託は100円（100ポイント）から購入可能</li>
+        <li>NISA口座でもポイント利用OK</li>
+        <li>ポイントと現金の併用もできる</li>
+      </ul>
+
+      <h2>メリット</h2>
+
+      <div class="merit-box">
+        <div class="merit-box-title">楽天ポイント投資の5つのメリット</div>
+        <ul class="merit-list">
+          <li>現金0円で投資を始められる — 心理的ハードルが低い</li>
+          <li>元手がポイントだから損しても精神的ダメージが少ない</li>
+          <li>ポイントが「お金を生むお金」に変わる</li>
+          <li>SPU（スーパーポイントアッププログラム）の倍率がUPする</li>
+          <li>NISA口座で使えば利益が非課税になる</li>
+        </ul>
+      </div>
+
+      <h3>SPU倍率がアップする</h3>
+      <p>楽天証券でポイント投資（投資信託を月30,000円以上、うち1ポイント以上利用）すると、楽天市場でのお買い物ポイントが+0.5倍になります。楽天経済圏を活用している方には大きなメリットです。</p>
+
+      <div class="example-box">
+        <div class="example-title">具体例：毎月500ポイントを投資した場合</div>
+        <p class="example-text">
+          毎月500ポイントを年利5%の投資信託に積み立てた場合（あくまでシミュレーション）：<br><br>
+          1年後：約 <span class="highlight-num">6,150円</span>（元ポイント6,000円分）<br>
+          5年後：約 <span class="highlight-num">34,000円</span>（元ポイント30,000円分）<br>
+          10年後：約 <span class="highlight-num">77,600円</span>（元ポイント60,000円分）<br><br>
+          ※運用成果を保証するものではありません。
+        </p>
+      </div>
+
+      <h2>デメリット</h2>
+
+      <div class="demerit-box">
+        <div class="demerit-box-title">知っておきたい3つのデメリット</div>
+        <ul class="demerit-list">
+          <li>期間限定ポイントは使えない（通常ポイントのみ対象）</li>
+          <li>投資なので元本割れのリスクがある（ポイントが減る可能性も）</li>
+          <li>ポイントを使い切ると楽天市場での買い物に使えなくなる</li>
+        </ul>
+      </div>
+
+      <div class="info-box">
+        <div class="info-box-title">期間限定ポイントは対象外</div>
+        <p>楽天ポイント投資で使えるのは「通常ポイント」のみです。キャンペーンなどで獲得した「期間限定ポイント」は投資に使えないのでご注意ください。期間限定ポイントは楽天市場や楽天ペイで使うのがおすすめです。</p>
+      </div>
+
+      <h2>おすすめの活用法</h2>
+
+      <h3>1. 少額から始めて投資に慣れる</h3>
+      <p>いきなり現金で投資するのが不安な方は、まずポイントだけで投資信託を買ってみましょう。値動きを体験することで、投資の感覚が身につきます。</p>
+
+      <h3>2. つみたてNISA × ポイント投資</h3>
+      <p>毎月の積立設定でポイント利用を設定しておけば、自動的にポイントを投資に回せます。NISA口座で積み立てれば利益は非課税。ポイントが非課税の資産に変わります。</p>
+
+      <h3>3. SPU狙いで月1ポイント投資</h3>
+      <p>SPU倍率アップの条件を満たすために、月30,000円以上の投資信託購入のうち1ポイント以上をポイントで支払う方法もあります。残りは現金で支払い、楽天市場でのポイント還元を最大化できます。</p>
+
+      <h2>楽天ポイント投資の始め方</h2>
+
+      <ul class="check-list">
+        <li>楽天証券の口座を開設する（無料）</li>
+        <li>楽天ポイントコースに設定する（初期設定で完了していることが多い）</li>
+        <li>投資信託の購入画面で「ポイント利用」を選択</li>
+        <li>使いたいポイント数を入力して注文</li>
+      </ul>
+
+      <p>つみたて設定では、毎月自動的にポイントを使う設定もできます。一度設定すれば、あとは放っておくだけです。</p>
+
+      <div class="cta-banner">
+        <h3>楽天ポイントで投資デビューしよう</h3>
+        <p>現金0円からスタート。貯まったポイントを資産に変えましょう。</p>
+        <a href="https://www.rakuten-sec.co.jp/" target="_blank" rel="noopener" class="btn-cta">無料で証券口座開設する <span aria-hidden="true">🎉</span></a>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-logo"><span>楽天</span>証券株式会社</div>
+    <div class="footer-copy">&copy; 2024 Rakuten Securities, Inc. All rights reserved.</div>
+  </footer>
+</body>
+
+</html>

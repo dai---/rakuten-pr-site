@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新NISAとは？楽天証券での始め方を初心者向けに解説【2026年】</title>
+  <meta name="description" content="新NISAの仕組み、つみたて投資枠と成長投資枠の違い、楽天証券でのNISA口座の開設方法を初心者向けに分かりやすく解説します。">
+  <meta name="keywords" content="新NISA, 楽天証券, 始め方, つみたて投資枠, 成長投資枠, 初心者">
+  <meta property="og:title" content="新NISAとは？楽天証券での始め方を初心者向けに解説">
+  <meta property="og:description" content="新NISAの仕組み、つみたて投資枠と成長投資枠の違い、楽天証券でのNISA口座の開設方法を解説。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://rakuten-pr-site.vercel.app/articles/nisa-guide.html">
+  <meta property="og:image" content="https://rakuten-pr-site.vercel.app/ogp.png">
+  <meta property="og:locale" content="ja_JP">
+  <link rel="canonical" href="https://rakuten-pr-site.vercel.app/articles/nisa-guide.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&family=Noto+Sans+JP:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --red: #FF3B3B;
+      --red-soft: #FF6B6B;
+      --red-pale: #FFF0F0;
+      --yellow: #FFD93D;
+      --green: #6BCB77;
+      --bg: #FFFBF5;
+      --card: #FFFFFF;
+      --text: #2D2D2D;
+      --mid: #666;
+      --light: #AAA;
+      --border: #F0E8E0;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans JP', 'Zen Maru Gothic', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.9;
+    }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 32px; height: 64px;
+      background: rgba(255, 251, 245, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 2px solid var(--border);
+    }
+
+    .nav-logo {
+      font-family: 'Zen Maru Gothic', sans-serif;
+      font-size: 1.15rem; font-weight: 900;
+      color: var(--text); text-decoration: none;
+      display: flex; align-items: center; gap: 8px;
+    }
+
+    .logo-badge {
+      background: var(--red); color: #fff;
+      font-size: 0.68rem; font-weight: 700;
+      padding: 2px 10px; border-radius: 100px;
+    }
+
+    .nav-cta {
+      background: var(--red); color: #fff;
+      text-decoration: none; font-size: 0.85rem; font-weight: 700;
+      padding: 10px 22px; border-radius: 100px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 3px 12px rgba(255, 59, 59, 0.35);
+    }
+
+    .nav-cta:hover { transform: translateY(-2px) scale(1.03); }
+
+    .article {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 100px 24px 60px;
+    }
+
+    .breadcrumb {
+      font-size: 0.8rem;
+      color: var(--mid);
+      margin-bottom: 24px;
+    }
+
+    .breadcrumb a { color: var(--mid); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--red); }
+
+    .article h1 {
+      font-family: 'Zen Maru Gothic', sans-serif;
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      font-weight: 900;
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+
+    .article-meta {
+      font-size: 0.8rem;
+      color: var(--light);
+      margin-bottom: 40px;
+    }
+
+    .article h2 {
+      font-family: 'Zen Maru Gothic', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 900;
+      margin: 48px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 3px solid var(--yellow);
+    }
+
+    .article h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin: 32px 0 12px;
+    }
+
+    .article p {
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      font-size: 0.9rem;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+      padding: 14px 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .comparison-table th {
+      background: var(--text);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.85rem;
+    }
+
+    .comparison-table th:first-child {
+      border-radius: 10px 0 0 0;
+    }
+
+    .comparison-table th:last-child {
+      border-radius: 0 10px 0 0;
+    }
+
+    .comparison-table td {
+      background: #fff;
+    }
+
+    .comparison-table tr:last-child td:first-child {
+      border-radius: 0 0 0 10px;
+    }
+
+    .comparison-table tr:last-child td:last-child {
+      border-radius: 0 0 10px 0;
+    }
+
+    .highlight-num {
+      color: var(--red);
+      font-weight: 900;
+    }
+
+    .info-box {
+      background: var(--red-pale);
+      border-left: 4px solid var(--red);
+      border-radius: 0 12px 12px 0;
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+
+    .info-box-title {
+      font-weight: 900;
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+      color: var(--red);
+    }
+
+    .info-box p {
+      font-size: 0.85rem;
+      color: var(--mid);
+      margin-bottom: 0;
+    }
+
+    .merit-box {
+      background: #F0FFF4;
+      border-left: 4px solid var(--green);
+      border-radius: 0 12px 12px 0;
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+
+    .merit-box-title {
+      font-weight: 900;
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+      color: var(--green);
+    }
+
+    .merit-box p {
+      font-size: 0.85rem;
+      color: var(--mid);
+      margin-bottom: 0;
+    }
+
+    .check-list {
+      list-style: none;
+      margin: 16px 0 24px;
+    }
+
+    .check-list li {
+      font-size: 0.9rem;
+      padding: 6px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .check-list li::before {
+      content: '✓';
+      color: var(--green);
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+
+    .cta-banner {
+      background: linear-gradient(135deg, #FFF5F5, #FFFBEA);
+      border: 2px solid var(--border);
+      border-radius: 22px;
+      padding: 40px 32px;
+      text-align: center;
+      margin: 48px 0;
+    }
+
+    .cta-banner h3 {
+      font-family: 'Zen Maru Gothic', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 900;
+      margin: 0 0 12px;
+    }
+
+    .cta-banner p {
+      color: var(--mid);
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+
+    .btn-cta {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--red); color: #fff;
+      text-decoration: none; font-size: 1rem; font-weight: 900;
+      padding: 16px 40px; border-radius: 100px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 18px rgba(255, 59, 59, 0.4);
+    }
+
+    .btn-cta:hover { transform: translateY(-3px) scale(1.03); }
+
+    footer {
+      background: var(--text);
+      padding: 32px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-size: 0.9rem; font-weight: 900; color: #fff; margin-bottom: 8px;
+    }
+
+    .footer-logo span { color: var(--red-soft); }
+
+    .footer-copy {
+      font-size: 0.68rem;
+      color: rgba(255, 255, 255, 0.2);
+    }
+
+    @media (max-width: 700px) {
+      nav { padding: 0 16px; }
+      .article { padding: 90px 16px 40px; }
+      .comparison-table { font-size: 0.8rem; }
+      .comparison-table th, .comparison-table td { padding: 10px 12px; }
+    }
+  </style>
+</head>
+
+<body>
+  <nav aria-label="メインナビゲーション">
+    <a href="/" class="nav-logo">
+      楽天証券
+      <span class="logo-badge">無料開設</span>
+    </a>
+    <a href="/#open-account" class="nav-cta" aria-label="証券口座開設をはじめる">はじめる <span aria-hidden="true">🚀</span></a>
+  </nav>
+
+  <main>
+    <article class="article">
+      <div class="breadcrumb">
+        <a href="/">ホーム</a> &gt; 新NISAとは？楽天証券での始め方
+      </div>
+
+      <h1>新NISAとは？楽天証券での始め方を初心者向けに解説</h1>
+      <div class="article-meta">更新日：2026年3月</div>
+
+      <p>2024年1月にスタートした新NISA（少額投資非課税制度）は、投資で得た利益が非課税になる制度です。これから投資を始める方にとって、最も活用すべき制度のひとつです。この記事では、新NISAの仕組みと、楽天証券での始め方を分かりやすく解説します。</p>
+
+      <h2>新NISAのポイントを3行で</h2>
+
+      <ul class="check-list">
+        <li>投資で得た利益（配当・売却益）に税金がかからない</li>
+        <li>非課税で保有できる期間は無期限</li>
+        <li>年間最大360万円まで投資できる（生涯上限1,800万円）</li>
+      </ul>
+
+      <h2>つみたて投資枠と成長投資枠の違い</h2>
+
+      <p>新NISAには2つの投資枠があり、併用が可能です。</p>
+
+      <table class="comparison-table">
+        <tr>
+          <th></th>
+          <th>つみたて投資枠</th>
+          <th>成長投資枠</th>
+        </tr>
+        <tr>
+          <td>年間投資上限</td>
+          <td class="highlight-num">120万円</td>
+          <td class="highlight-num">240万円</td>
+        </tr>
+        <tr>
+          <td>対象商品</td>
+          <td>金融庁が選定した投資信託</td>
+          <td>株式・ETF・投資信託</td>
+        </tr>
+        <tr>
+          <td>買い方</td>
+          <td>積立のみ</td>
+          <td>一括・積立どちらもOK</td>
+        </tr>
+        <tr>
+          <td>おすすめな人</td>
+          <td>コツコツ積立したい方</td>
+          <td>個別株にも挑戦したい方</td>
+        </tr>
+        <tr>
+          <td>非課税期間</td>
+          <td>無期限</td>
+          <td>無期限</td>
+        </tr>
+      </table>
+
+      <div class="merit-box">
+        <div class="merit-box-title">2つの枠は併用できる</div>
+        <p>つみたて投資枠と成長投資枠は同時に使えます。例えば、毎月の積立はつみたて投資枠で、ボーナス時の一括投資は成長投資枠で、という使い分けが可能です。</p>
+      </div>
+
+      <h2>新NISAで非課税になるとどれくらいお得？</h2>
+
+      <p>通常、投資で得た利益には<strong>約20%の税金</strong>がかかります。新NISAならこれが0円です。</p>
+
+      <table class="comparison-table">
+        <tr>
+          <th></th>
+          <th>通常の口座</th>
+          <th>NISA口座</th>
+        </tr>
+        <tr>
+          <td>利益が50万円の場合</td>
+          <td>税金 約10万円</td>
+          <td class="highlight-num">税金 0円</td>
+        </tr>
+        <tr>
+          <td>利益が100万円の場合</td>
+          <td>税金 約20万円</td>
+          <td class="highlight-num">税金 0円</td>
+        </tr>
+        <tr>
+          <td>利益が500万円の場合</td>
+          <td>税金 約100万円</td>
+          <td class="highlight-num">税金 0円</td>
+        </tr>
+      </table>
+
+      <p>長期で運用するほど利益が大きくなる可能性があり、非課税のメリットも大きくなります。</p>
+
+      <h2>楽天証券で新NISAを始める方法</h2>
+
+      <h3>まだ楽天証券の口座をお持ちでない方</h3>
+      <p>証券口座の開設時に「NISA口座も一緒に申し込む」を選択するだけでOKです。追加の手続きや費用は不要です。</p>
+
+      <h3>すでに楽天証券の口座をお持ちの方</h3>
+      <p>ログイン後、「NISA・つみたてNISA」メニューからNISA口座の開設を申し込めます。税務署の審査があるため、開設まで1〜2週間ほどかかる場合があります。</p>
+
+      <div class="info-box">
+        <div class="info-box-title">NISA口座は1人1口座</div>
+        <p>NISA口座は全金融機関を通じて1人1口座しか持てません。他の証券会社ですでにNISA口座を開設している場合は、金融機関の変更手続きが必要です。</p>
+      </div>
+
+      <h2>楽天証券でNISAを使うメリット</h2>
+
+      <ul class="check-list">
+        <li>NISA口座でも楽天ポイントが使える・貯まる</li>
+        <li>つみたて投資枠の対象ファンドが業界トップクラスの品揃え</li>
+        <li>楽天カード決済で積立すると、ポイントが貯まる</li>
+        <li>楽天銀行との連携（マネーブリッジ）で入出金がスムーズ</li>
+        <li>iSPEEDアプリでNISA口座の管理・取引がスマホで完結</li>
+      </ul>
+
+      <h2>初心者におすすめの始め方</h2>
+
+      <p>迷ったら、まずは<strong>つみたて投資枠で毎月少額から積立</strong>を始めるのがおすすめです。</p>
+
+      <ul class="check-list">
+        <li>月100円から積立可能</li>
+        <li>金融庁が選定した低コストの投資信託から選べる</li>
+        <li>一度設定すれば自動で積み立ててくれる</li>
+        <li>楽天ポイントで積立もできるので、現金を使わずに始められる</li>
+      </ul>
+
+      <div class="cta-banner">
+        <h3>楽天証券でNISAデビューしよう</h3>
+        <p>NISA口座の開設・維持費は0円。証券口座と同時に申込みできます。</p>
+        <a href="https://www.rakuten-sec.co.jp/" target="_blank" rel="noopener" class="btn-cta">無料で証券口座開設する <span aria-hidden="true">🎉</span></a>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-logo"><span>楽天</span>証券株式会社</div>
+    <div class="footer-copy">&copy; 2024 Rakuten Securities, Inc. All rights reserved.</div>
+  </footer>
+</body>
+
+</html>
