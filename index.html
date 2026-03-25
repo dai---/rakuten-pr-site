@@ -1,401 +1,727 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>楽天証券 | 投資、はじめてみない？</title>
-<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --red: #FF3B3B;
-    --red-soft: #FF6B6B;
-    --red-pale: #FFF0F0;
-    --yellow: #FFD93D;
-    --green: #6BCB77;
-    --blue: #4ECDC4;
-    --bg: #FFFBF5;
-    --card: #FFFFFF;
-    --text: #2D2D2D;
-    --mid: #666;
-    --light: #AAA;
-    --border: #F0E8E0;
-  }
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body {
-    font-family: 'Zen Maru Gothic', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    overflow-x: hidden;
-  }
-  /* NAV */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 0 32px;
-    height: 64px;
-    background: rgba(255,251,245,0.92);
-    backdrop-filter: blur(10px);
-    border-bottom: 2px solid var(--border);
-  }
-  .nav-logo {
-    font-size: 1.15rem; font-weight: 900;
-    color: var(--text); text-decoration: none;
-    display: flex; align-items: center; gap: 8px;
-  }
-  .logo-badge {
-    background: var(--red); color: #fff;
-    font-size: 0.68rem; font-weight: 700;
-    padding: 2px 10px; border-radius: 100px;
-  }
-  .nav-cta {
-    background: var(--red); color: #fff;
-    text-decoration: none; font-size: 0.85rem; font-weight: 700;
-    padding: 10px 22px; border-radius: 100px;
-    transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 3px 12px rgba(255,59,59,0.35);
-  }
-  .nav-cta:hover { transform: translateY(-2px) scale(1.03); box-shadow: 0 6px 20px rgba(255,59,59,0.45); }
-  /* HERO */
-  .hero {
-    padding: 130px 32px 80px;
-    text-align: center;
-    position: relative; overflow: hidden;
-  }
-  .blob {
-    position: absolute; border-radius: 50%; pointer-events: none;
-  }
-  .blob1 {
-    top: 40px; left: -120px; width: 380px; height: 380px;
-    background: radial-gradient(circle, rgba(255,217,61,0.22) 0%, transparent 70%);
-    animation: float1 6s ease-in-out infinite;
-  }
-  .blob2 {
-    top: 80px; right: -100px; width: 300px; height: 300px;
-    background: radial-gradient(circle, rgba(78,205,196,0.18) 0%, transparent 70%);
-    animation: float2 8s ease-in-out infinite;
-  }
-  .blob3 {
-    bottom: -60px; left: 38%; width: 260px; height: 260px;
-    background: radial-gradient(circle, rgba(255,59,59,0.1) 0%, transparent 70%);
-    animation: float1 7s ease-in-out infinite reverse;
-  }
-  @keyframes float1 {
-    0%,100% { transform: translate(0,0) scale(1); }
-    50% { transform: translate(20px,-20px) scale(1.05); }
-  }
-  @keyframes float2 {
-    0%,100% { transform: translate(0,0) scale(1); }
-    50% { transform: translate(-15px,15px) scale(1.04); }
-  }
-  .hero-emoji {
-    font-size: 3.6rem; display: block; margin-bottom: 20px;
-    animation: bounce 2s ease-in-out infinite;
-  }
-  @keyframes bounce {
-    0%,100% { transform: translateY(0); }
-    50% { transform: translateY(-12px); }
-  }
-  .hero-h1 {
-    font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 900;
-    line-height: 1.45; margin-bottom: 20px; position: relative;
-  }
-  .underline {
-    position: relative; display: inline-block;
-  }
-  .underline::after {
-    content: '';
-    position: absolute; left: 0; bottom: -2px; right: 0; height: 10px;
-    background: var(--yellow); border-radius: 5px; z-index: -1;
-  }
-  .hero-sub {
-    font-size: 1.05rem; color: var(--mid); line-height: 1.85;
-    margin-bottom: 40px; max-width: 480px; margin-left: auto; margin-right: auto;
-  }
-  .hero-btns {
-    display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
-    margin-bottom: 56px;
-  }
-  .btn-main {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: var(--red); color: #fff;
-    text-decoration: none; font-size: 1rem; font-weight: 700;
-    padding: 16px 36px; border-radius: 100px;
-    transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 4px 18px rgba(255,59,59,0.4);
-  }
-  .btn-main:hover { transform: translateY(-3px) scale(1.03); box-shadow: 0 8px 28px rgba(255,59,59,0.5); }
-  .btn-ghost {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: #fff; color: var(--text);
-    text-decoration: none; font-size: 0.92rem; font-weight: 500;
-    padding: 16px 28px; border-radius: 100px;
-    border: 2px solid var(--border);
-    transition: border-color 0.2s, transform 0.2s;
-  }
-  .btn-ghost:hover { border-color: var(--red-soft); transform: translateY(-2px); }
-  .stats-pills {
-    display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
-  }
-  .pill {
-    background: #fff; border: 2px solid var(--border); border-radius: 100px;
-    padding: 10px 22px;
-    display: flex; align-items: center; gap: 8px;
-    font-size: 0.87rem; font-weight: 500;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    transition: transform 0.2s;
-  }
-  .pill:hover { transform: translateY(-2px); }
-  .pill-num { font-weight: 900; color: var(--red); }
-  /* FEATURES */
-  .features {
-    padding: 90px 32px;
-    max-width: 900px; margin: 0 auto;
-  }
-  .section-head { text-align: center; margin-bottom: 48px; }
-  .section-tag {
-    display: inline-block; background: var(--yellow); color: var(--text);
-    font-size: 0.75rem; font-weight: 700;
-    padding: 4px 14px; border-radius: 100px; margin-bottom: 12px;
-  }
-  .section-title { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 900; line-height: 1.4; }
-  .feature-list {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
-  }
-  .feature-card {
-    background: #fff; border-radius: 22px; padding: 32px 28px;
-    border: 2px solid var(--border);
-    transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
-    position: relative; overflow: hidden;
-  }
-  .feature-card::before {
-    content: attr(data-emoji);
-    position: absolute; right: 16px; top: 14px;
-    font-size: 2.8rem; opacity: 0.12;
-  }
-  .feature-card:hover {
-    transform: translateY(-6px) rotate(-0.5deg);
-    box-shadow: 0 14px 36px rgba(0,0,0,0.09);
-    border-color: var(--red-soft);
-  }
-  .feature-emoji { font-size: 2.2rem; margin-bottom: 14px; display: block; }
-  .feature-title { font-size: 1.05rem; font-weight: 900; margin-bottom: 8px; }
-  .feature-text { font-size: 0.85rem; line-height: 1.85; color: var(--mid); }
-  .feature-badge {
-    display: inline-block; margin-top: 12px;
-    background: var(--red-pale); color: var(--red);
-    font-size: 0.72rem; font-weight: 700;
-    padding: 3px 10px; border-radius: 100px;
-  }
-  /* FOR WHOM */
-  .for-whom { padding: 90px 32px; background: #fff; }
-  .for-whom-inner { max-width: 900px; margin: 0 auto; }
-  .persona-list {
-    display: grid; grid-template-columns: repeat(3,1fr);
-    gap: 16px; margin-top: 40px;
-  }
-  .persona-card {
-    background: var(--bg); border-radius: 22px; padding: 28px 20px;
-    text-align: center; border: 2px solid var(--border);
-    transition: transform 0.25s, box-shadow 0.25s;
-  }
-  .persona-card:hover { transform: translateY(-5px); box-shadow: 0 10px 28px rgba(0,0,0,0.07); }
-  .persona-emoji { font-size: 2.8rem; margin-bottom: 12px; display: block; }
-  .persona-title { font-size: 1rem; font-weight: 900; margin-bottom: 8px; }
-  .persona-text { font-size: 0.82rem; line-height: 1.8; color: var(--mid); }
-  /* CTA */
-  .cta-section {
-    padding: 100px 32px; text-align: center;
-    position: relative; overflow: hidden;
-  }
-  .cta-section::before {
-    content: ''; position: absolute; inset: 0;
-    background: linear-gradient(135deg, #FFF5F5 0%, #FFFBEA 50%, #F0FFFE 100%);
-  }
-  .cta-inner { position: relative; max-width: 600px; margin: 0 auto; }
-  .cta-emoji {
-    font-size: 4rem; display: block; margin-bottom: 20px;
-    animation: wave 2s ease-in-out infinite;
-  }
-  @keyframes wave {
-    0%,100% { transform: rotate(-5deg); }
-    50% { transform: rotate(10deg); }
-  }
-  .cta-title {
-    font-size: clamp(1.7rem, 3.5vw, 2.4rem); font-weight: 900;
-    line-height: 1.45; margin-bottom: 16px;
-  }
-  .cta-sub {
-    font-size: 0.95rem; color: var(--mid); line-height: 1.85; margin-bottom: 32px;
-  }
-  .cta-chips {
-    display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;
-    margin-bottom: 36px;
-  }
-  .chip {
-    background: #fff; border: 2px solid var(--border); border-radius: 100px;
-    font-size: 0.8rem; font-weight: 700; padding: 6px 16px;
-    display: flex; align-items: center; gap: 5px;
-  }
-  .chip-check { color: var(--green); }
-  .btn-cta {
-    display: inline-flex; align-items: center; gap: 10px;
-    background: var(--red); color: #fff;
-    text-decoration: none; font-size: 1.1rem; font-weight: 900;
-    padding: 18px 52px; border-radius: 100px;
-    transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 6px 24px rgba(255,59,59,0.42);
-  }
-  .btn-cta:hover { transform: translateY(-3px) scale(1.03); box-shadow: 0 12px 36px rgba(255,59,59,0.52); }
-  .cta-note { margin-top: 16px; font-size: 0.78rem; color: var(--light); }
-  /* FOOTER */
-  footer { background: var(--text); padding: 44px 32px; text-align: center; }
-  .footer-logo { font-size: 1rem; font-weight: 900; color: #fff; margin-bottom: 12px; }
-  .footer-logo span { color: var(--red-soft); }
-  .footer-legal {
-    font-size: 0.7rem; color: rgba(255,255,255,0.32); line-height: 1.75;
-    max-width: 560px; margin: 0 auto 14px;
-  }
-  .footer-copy { font-size: 0.68rem; color: rgba(255,255,255,0.2); }
-  /* REVEAL */
-  .reveal {
-    opacity: 0; transform: translateY(28px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
-  @media (max-width: 700px) {
-    .feature-list { grid-template-columns: 1fr; }
-    .persona-list { grid-template-columns: 1fr; }
-    nav { padding: 0 20px; }
-  }
-</style>
-</head>
-<body>
-<nav>
-  <a href="#" class="nav-logo">
-    楽天証券
-    <span class="logo-badge">無料開設</span>
-  </a>
-  <a href="#open-account" class="nav-cta">はじめる 🚀</a>
-</nav>
-<section class="hero">
-  <div class="blob blob1"></div>
-  <div class="blob blob2"></div>
-  <div class="blob blob3"></div>
-  <span class="hero-emoji">💰</span>
-  <h1 class="hero-h1">
-    お金に、<br>
-    <span class="underline">がんばって</span>もらおう。
-  </h1>
-  <p class="hero-sub">
-    楽天ポイントで始められて、手数料は0円。<br>
-    スマホひとつで、コツコツ資産づくり 🌱
-  </p>
-  <div class="hero-btns">
-    <a href="#open-account" class="btn-main">口座を開設する（無料）✨</a>
-    <a href="#features" class="btn-ghost">どんなサービス？</a>
-  </div>
-  <div class="stats-pills">
-    <div class="pill">👥 <span class="pill-num">1,000万+</span> 口座開設</div>
-    <div class="pill">💸 国内株 <span class="pill-num">手数料0円</span></div>
-    <div class="pill">📦 <span class="pill-num">2,600本+</span> ファンド</div>
-  </div>
-</section>
-<section class="features" id="features">
-  <div class="section-head reveal">
-    <div class="section-tag">✨ できること</div>
-    <h2 class="section-title">こんなことができます</h2>
-  </div>
-  <div class="feature-list">
-    <div class="feature-card reveal" data-emoji="💸">
-      <span class="feature-emoji">💸</span>
-      <div class="feature-title">手数料が0円！</div>
-      <p class="feature-text">「ゼロコース」なら国内株式の取引手数料が完全無料。売買コストを気にせずのびのび投資できます。</p>
-      <span class="feature-badge">ゼロコース対応</span>
-    </div>
-    <div class="feature-card reveal" data-emoji="🛍️">
-      <span class="feature-emoji">🛍️</span>
-      <div class="feature-title">ポイントで投資できる</div>
-      <p class="feature-text">楽天市場や楽天カードで貯めたポイントをそのまま投資に使えます。お買い物感覚で資産づくり。</p>
-      <span class="feature-badge">楽天ポイント対応</span>
-    </div>
-    <div class="feature-card reveal" data-emoji="🌱">
-      <span class="feature-emoji">🌱</span>
-      <div class="feature-title">NISAもしっかり対応</div>
-      <p class="feature-text">新NISAの成長投資枠もつみたて投資枠もバッチリ。非課税でコツコツ増やしていきましょう。</p>
-      <span class="feature-badge">新NISA対応</span>
-    </div>
-    <div class="feature-card reveal" data-emoji="📱">
-      <span class="feature-emoji">📱</span>
-      <div class="feature-title">スマホで全部できる</div>
-      <p class="feature-text">iSPEEDアプリで株価確認から注文まで完結。電車の中でもサクッとチェックできます。</p>
-      <span class="feature-badge">アプリ対応</span>
-    </div>
-  </div>
-</section>
-<section class="for-whom">
-  <div class="for-whom-inner">
-    <div class="section-head reveal">
-      <div class="section-tag">🙋 こんな人におすすめ</div>
-      <h2 class="section-title">あなたに合ってるかも？</h2>
-    </div>
-    <div class="persona-list">
-      <div class="persona-card reveal">
-        <span class="persona-emoji">🔰</span>
-        <div class="persona-title">はじめての投資</div>
-        <p class="persona-text">100円から始められるから、とりあえずやってみる、が気軽にできます。</p>
-      </div>
-      <div class="persona-card reveal">
-        <span class="persona-emoji">🛒</span>
-        <div class="persona-title">楽天ユーザー</div>
-        <p class="persona-text">楽天市場・楽天カードをよく使う方はSPU倍率もUP。ポイントがどんどん活きてきます。</p>
-      </div>
-      <div class="persona-card reveal">
-        <span class="persona-emoji">🏷️</span>
-        <div class="persona-title">コスト重視な方</div>
-        <p class="persona-text">手数料を抑えたい方に最適。長期投資ほどコスト差が将来の資産額に大きく響きます。</p>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="cta-section" id="open-account">
-  <div class="cta-inner">
-    <span class="cta-emoji">👋</span>
-    <h2 class="cta-title reveal">さあ、はじめてみよう！<br>口座開設は無料です。</h2>
-    <p class="cta-sub reveal">
-      オンラインで申込みできて、<br>最短翌営業日から取引スタート！
-    </p>
-    <div class="cta-chips reveal">
-      <div class="chip"><span class="chip-check">✓</span> 口座維持費0円</div>
-      <div class="chip"><span class="chip-check">✓</span> 最短翌営業日取引可</div>
-      <div class="chip"><span class="chip-check">✓</span> スマホで完結</div>
-    </div>
-    <a href="https://www.rakuten-sec.co.jp/" target="_blank" class="btn-cta reveal">
-      無料で口座開設する 🎉
-    </a>
-    <p class="cta-note reveal">マイナンバーカードまたは本人確認書類が必要です</p>
-  </div>
-</section>
-<footer>
-  <div class="footer-logo"><span>楽天</span>証券株式会社</div>
-  <p class="footer-legal">
-    金融商品取引業者 関東財務局長（金商）第195号<br>
-    加入協会：日本証券業協会、一般社団法人金融先物取引業協会、日本商品先物取引協会<br>
-    ※投資にはリスクが伴います。元本割れの可能性があります。
-  </p>
-  <div class="footer-copy">© 2024 Rakuten Securities, Inc. All rights reserved.</div>
-</footer>
-<script>
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => entry.target.classList.add('visible'), i * 100);
-        observer.unobserve(entry.target);
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>楽天証券 | 投資、はじめてみない？</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&family=Noto+Sans+JP:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --red: #FF3B3B;
+      --red-soft: #FF6B6B;
+      --red-pale: #FFF0F0;
+      --yellow: #FFD93D;
+      --green: #6BCB77;
+      --blue: #4ECDC4;
+      --bg: #FFFBF5;
+      --card: #FFFFFF;
+      --text: #2D2D2D;
+      --mid: #666;
+      --light: #AAA;
+      --border: #F0E8E0;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Zen Maru Gothic', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 32px;
+      height: 64px;
+      background: rgba(255, 251, 245, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 2px solid var(--border);
+    }
+
+    .nav-logo {
+      font-size: 1.15rem;
+      font-weight: 900;
+      color: var(--text);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .logo-badge {
+      background: var(--red);
+      color: #fff;
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 2px 10px;
+      border-radius: 100px;
+    }
+
+    .nav-cta {
+      background: var(--red);
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 10px 22px;
+      border-radius: 100px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 3px 12px rgba(255, 59, 59, 0.35);
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 0 6px 20px rgba(255, 59, 59, 0.45);
+    }
+
+    /* HERO */
+    .hero {
+      padding: 130px 32px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .blob1 {
+      top: 40px;
+      left: -120px;
+      width: 380px;
+      height: 380px;
+      background: radial-gradient(circle, rgba(255, 217, 61, 0.22) 0%, transparent 70%);
+      animation: float1 6s ease-in-out infinite;
+    }
+
+    .blob2 {
+      top: 80px;
+      right: -100px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(78, 205, 196, 0.18) 0%, transparent 70%);
+      animation: float2 8s ease-in-out infinite;
+    }
+
+    .blob3 {
+      bottom: -60px;
+      left: 38%;
+      width: 260px;
+      height: 260px;
+      background: radial-gradient(circle, rgba(255, 59, 59, 0.1) 0%, transparent 70%);
+      animation: float1 7s ease-in-out infinite reverse;
+    }
+
+    @keyframes float1 {
+
+      0%,
+      100% {
+        transform: translate(0, 0) scale(1);
       }
-    });
-  }, { threshold: 0.1 });
-  reveals.forEach(el => observer.observe(el));
-</script>
+
+      50% {
+        transform: translate(20px, -20px) scale(1.05);
+      }
+    }
+
+    @keyframes float2 {
+
+      0%,
+      100% {
+        transform: translate(0, 0) scale(1);
+      }
+
+      50% {
+        transform: translate(-15px, 15px) scale(1.04);
+      }
+    }
+
+    .hero-emoji {
+      font-size: 3.6rem;
+      display: block;
+      margin-bottom: 20px;
+      animation: bounce 2s ease-in-out infinite;
+    }
+
+    @keyframes bounce {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-12px);
+      }
+    }
+
+    .hero-h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 900;
+      line-height: 1.45;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .underline {
+      position: relative;
+      display: inline-block;
+    }
+
+    .underline::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      right: 0;
+      height: 10px;
+      background: var(--yellow);
+      border-radius: 5px;
+      z-index: -1;
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--mid);
+      line-height: 1.85;
+      margin-bottom: 40px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 56px;
+    }
+
+    .btn-main {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--red);
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 16px 36px;
+      border-radius: 100px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 18px rgba(255, 59, 59, 0.4);
+    }
+
+    .btn-main:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 8px 28px rgba(255, 59, 59, 0.5);
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #fff;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 500;
+      padding: 16px 28px;
+      border-radius: 100px;
+      border: 2px solid var(--border);
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--red-soft);
+      transform: translateY(-2px);
+    }
+
+    .stats-pills {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .pill {
+      background: #fff;
+      border: 2px solid var(--border);
+      border-radius: 100px;
+      padding: 10px 22px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.87rem;
+      font-weight: 500;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s;
+    }
+
+    .pill:hover {
+      transform: translateY(-2px);
+    }
+
+    .pill-num {
+      font-weight: 900;
+      color: var(--red);
+    }
+
+    /* FEATURES */
+    .features {
+      padding: 90px 32px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .section-head {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .section-tag {
+      display: inline-block;
+      background: var(--yellow);
+      color: var(--text);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: 100px;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 900;
+      line-height: 1.4;
+    }
+
+    .feature-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .feature-card {
+      background: #fff;
+      border-radius: 22px;
+      padding: 32px 28px;
+      border: 2px solid var(--border);
+      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-card::before {
+      content: attr(data-emoji);
+      position: absolute;
+      right: 16px;
+      top: 14px;
+      font-size: 2.8rem;
+      opacity: 0.12;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-6px) rotate(-0.5deg);
+      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.09);
+      border-color: var(--red-soft);
+    }
+
+    .feature-emoji {
+      font-size: 2.2rem;
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .feature-title {
+      font-size: 1.05rem;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .feature-text {
+      font-size: 0.85rem;
+      line-height: 1.85;
+      color: var(--mid);
+    }
+
+    .feature-badge {
+      display: inline-block;
+      margin-top: 12px;
+      background: var(--red-pale);
+      color: var(--red);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 100px;
+    }
+
+    /* FOR WHOM */
+    .for-whom {
+      padding: 90px 32px;
+      background: #fff;
+    }
+
+    .for-whom-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .persona-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 40px;
+    }
+
+    .persona-card {
+      background: var(--bg);
+      border-radius: 22px;
+      padding: 28px 20px;
+      text-align: center;
+      border: 2px solid var(--border);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .persona-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.07);
+    }
+
+    .persona-emoji {
+      font-size: 2.8rem;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .persona-title {
+      font-size: 1rem;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .persona-text {
+      font-size: 0.82rem;
+      line-height: 1.8;
+      color: var(--mid);
+    }
+
+    /* CTA */
+    .cta-section {
+      padding: 100px 32px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #FFF5F5 0%, #FFFBEA 50%, #F0FFFE 100%);
+    }
+
+    .cta-inner {
+      position: relative;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .cta-emoji {
+      font-size: 4rem;
+      display: block;
+      margin-bottom: 20px;
+      animation: wave 2s ease-in-out infinite;
+    }
+
+    @keyframes wave {
+
+      0%,
+      100% {
+        transform: rotate(-5deg);
+      }
+
+      50% {
+        transform: rotate(10deg);
+      }
+    }
+
+    .cta-title {
+      font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+      font-weight: 900;
+      line-height: 1.45;
+      margin-bottom: 16px;
+    }
+
+    .cta-sub {
+      font-size: 0.95rem;
+      color: var(--mid);
+      line-height: 1.85;
+      margin-bottom: 32px;
+    }
+
+    .cta-chips {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+
+    .chip {
+      background: #fff;
+      border: 2px solid var(--border);
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 6px 16px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .chip-check {
+      color: var(--green);
+    }
+
+    .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--red);
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 900;
+      padding: 18px 52px;
+      border-radius: 100px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 6px 24px rgba(255, 59, 59, 0.42);
+    }
+
+    .btn-cta:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 12px 36px rgba(255, 59, 59, 0.52);
+    }
+
+    .cta-note {
+      margin-top: 16px;
+      font-size: 0.78rem;
+      color: var(--light);
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--text);
+      padding: 44px 32px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-size: 1rem;
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .footer-logo span {
+      color: var(--red-soft);
+    }
+
+    .footer-legal {
+      font-size: 0.7rem;
+      color: rgba(255, 255, 255, 0.32);
+      line-height: 1.75;
+      max-width: 560px;
+      margin: 0 auto 14px;
+    }
+
+    .footer-copy {
+      font-size: 0.68rem;
+      color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* REVEAL */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 700px) {
+      .feature-list {
+        grid-template-columns: 1fr;
+      }
+
+      .persona-list {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        padding: 0 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <a href="#" class="nav-logo">
+      楽天証券
+      <span class="logo-badge">無料開設</span>
+    </a>
+    <a href="#open-account" class="nav-cta">はじめる 🚀</a>
+  </nav>
+  <section class="hero">
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+    <div class="blob blob3"></div>
+    <span class="hero-emoji">💰</span>
+    <h1 class="hero-h1">
+      お金に、<br>
+      <span class="underline">がんばって</span>もらおう
+    </h1>
+    <p class="hero-sub">
+      楽天ポイントで始められて、手数料は0円。<br>
+      スマホひとつで、コツコツ資産づくり 🌱
+    </p>
+    <div class="hero-btns">
+      <a href="#open-account" class="btn-main">口座を開設する（無料）✨</a>
+      <a href="#features" class="btn-ghost">どんなサービス？</a>
+    </div>
+    <div class="stats-pills">
+      <div class="pill">👥 <span class="pill-num">1,000万+</span> 口座開設</div>
+      <div class="pill">💸 国内株 <span class="pill-num">手数料0円</span></div>
+      <div class="pill">📦 <span class="pill-num">2,600本+</span> ファンド</div>
+    </div>
+  </section>
+  <section class="features" id="features">
+    <div class="section-head reveal">
+      <div class="section-tag">✨ できること</div>
+      <h2 class="section-title">こんなことができます</h2>
+    </div>
+    <div class="feature-list">
+      <div class="feature-card reveal" data-emoji="💸">
+        <span class="feature-emoji">💸</span>
+        <div class="feature-title">手数料が0円！</div>
+        <p class="feature-text">「ゼロコース」なら国内株式の取引手数料が完全無料。売買コストを気にせずのびのび投資できます。</p>
+        <span class="feature-badge">ゼロコース対応</span>
+      </div>
+      <div class="feature-card reveal" data-emoji="🛍️">
+        <span class="feature-emoji">🛍️</span>
+        <div class="feature-title">ポイントで投資できる</div>
+        <p class="feature-text">楽天市場や楽天カードで貯めたポイントをそのまま投資に使えます。お買い物感覚で資産づくり。</p>
+        <span class="feature-badge">楽天ポイント対応</span>
+      </div>
+      <div class="feature-card reveal" data-emoji="🌱">
+        <span class="feature-emoji">🌱</span>
+        <div class="feature-title">NISAもしっかり対応</div>
+        <p class="feature-text">新NISAの成長投資枠もつみたて投資枠もバッチリ。非課税でコツコツ増やしていきましょう。</p>
+        <span class="feature-badge">新NISA対応</span>
+      </div>
+      <div class="feature-card reveal" data-emoji="📱">
+        <span class="feature-emoji">📱</span>
+        <div class="feature-title">スマホで全部できる</div>
+        <p class="feature-text">iSPEEDアプリで株価確認から注文まで完結。電車の中でもサクッとチェックできます。</p>
+        <span class="feature-badge">アプリ対応</span>
+      </div>
+    </div>
+  </section>
+  <section class="for-whom">
+    <div class="for-whom-inner">
+      <div class="section-head reveal">
+        <div class="section-tag">🙋 こんな人におすすめ</div>
+        <h2 class="section-title">あなたに合ってるかも？</h2>
+      </div>
+      <div class="persona-list">
+        <div class="persona-card reveal">
+          <span class="persona-emoji">🔰</span>
+          <div class="persona-title">はじめての投資</div>
+          <p class="persona-text">100円から始められるから、とりあえずやってみる、が気軽にできます。</p>
+        </div>
+        <div class="persona-card reveal">
+          <span class="persona-emoji">🛒</span>
+          <div class="persona-title">楽天ユーザー</div>
+          <p class="persona-text">楽天市場・楽天カードをよく使う方はSPU倍率もUP。ポイントがどんどん活きてきます。</p>
+        </div>
+        <div class="persona-card reveal">
+          <span class="persona-emoji">🏷️</span>
+          <div class="persona-title">コスト重視な方</div>
+          <p class="persona-text">手数料を抑えたい方に最適。長期投資ほどコスト差が将来の資産額に大きく響きます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="cta-section" id="open-account">
+    <div class="cta-inner">
+      <span class="cta-emoji">👋</span>
+      <h2 class="cta-title reveal">さあ、はじめてみよう！<br>口座開設は無料です。</h2>
+      <p class="cta-sub reveal">
+        オンラインで申込みできて、<br>最短翌営業日から取引スタート！
+      </p>
+      <div class="cta-chips reveal">
+        <div class="chip"><span class="chip-check">✓</span> 口座維持費0円</div>
+        <div class="chip"><span class="chip-check">✓</span> 最短翌営業日取引可</div>
+        <div class="chip"><span class="chip-check">✓</span> スマホで完結</div>
+      </div>
+      <a href="https://www.rakuten-sec.co.jp/" target="_blank" class="btn-cta reveal">
+        無料で口座開設する 🎉
+      </a>
+      <p class="cta-note reveal">マイナンバーカードまたは本人確認書類が必要です</p>
+    </div>
+  </section>
+  <footer>
+    <div class="footer-logo"><span>楽天</span>証券株式会社</div>
+    <p class="footer-legal">
+      金融商品取引業者 関東財務局長（金商）第195号<br>
+      加入協会：日本証券業協会、一般社団法人金融先物取引業協会、日本商品先物取引協会<br>
+      ※投資にはリスクが伴います。元本割れの可能性があります。
+    </p>
+    <div class="footer-copy">© 2024 Rakuten Securities, Inc. All rights reserved.</div>
+  </footer>
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 100);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
 </body>
+
 </html>
